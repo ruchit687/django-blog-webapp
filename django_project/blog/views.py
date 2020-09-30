@@ -29,7 +29,7 @@ def home(request):
         # will let us pass the data to template & let it access within the template
         # so whatever key name is mentioned would be accessible from the template.
     }
-    return render(request, 'blog/home.html', context=context)
+    return render(request, 'blog/home.html', context)
     # context passing info into our template
     # >>> return HttpResponse('<h1>Blog Home</h1>')  <<<
     # we can send complete html structure here
