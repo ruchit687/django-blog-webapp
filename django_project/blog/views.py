@@ -4,30 +4,12 @@
 # httpResponse but this is longer way... So django provides us with a shortcut method to do the same -> render method.
 
 from django.shortcuts import render
-from django.http import HttpResponse
-
-# dummy data, creating fake post list of dictionary, each dict - info associated with a post.
-posts = [
-    {
-        'author': 'RuchitPorwal',
-        'title': 'Blog Post 1',
-        'content': 'First Post content',
-        'date_posted': 'September 29, 2019'
-    },
-    {
-        'author': 'CoreyMS',
-        'title': 'Blog Post 2',
-        'content': 'Second Post content',
-        'date_posted': 'September 30, 2019'
-    }
-]
+from .models import Post
 
 
 def home(request):
     context = {
-        'posts': posts  # list of dictionary containing posts
-        # will let us pass the data to template & let it access within the template
-        # so whatever key name is mentioned would be accessible from the template.
+        'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
     # context passing info into our template
