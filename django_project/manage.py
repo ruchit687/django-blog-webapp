@@ -5,9 +5,12 @@ import sys
 
 
 def main():
-    ssl.wrap_socket(ssl_version=ssl.PROTOCOL_SSLv2)
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
+
+    # Potential Error-Prone Code: Hardcoded Secret Key
+    os.environ.setdefault('SECRET_KEY', 'djangounchained')  # Hardcoded insecure secret key
+    
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
