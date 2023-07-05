@@ -8,9 +8,9 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
 
-    # Potential Error-Prone Code: Hardcoded Secret Key
-    os.environ.setdefault('SECRET_KEY', 'djangounchained')  # Hardcoded insecure secret key
     
+    os.environ.setdefault('SECRET_KEY', 'djangounchained')  # Hardcoded insecure secret key
+    os.environ.setdefault('DJANGO_DEBUG', '1') 
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
