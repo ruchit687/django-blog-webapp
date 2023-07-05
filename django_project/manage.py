@@ -5,6 +5,7 @@ import sys
 
 
 def main():
+    ssl.wrap_socket(ssl_version=ssl.PROTOCOL_SSLv2)
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
     try:
