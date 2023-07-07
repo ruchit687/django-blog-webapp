@@ -7,7 +7,7 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
-
+  os.environ.setdefault('DJANGO_DEBUG', '1') 
     
     os.environ.setdefault('SECRET_KEY', 'djangounchained')  # Hardcoded insecure secret key
     os.environ.setdefault('DJANGO_DEBUG', '1') 
